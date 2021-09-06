@@ -11,10 +11,16 @@ import javax.persistence.Table;
 @Table(name="STUDENT")
 public class Student {
 @Id
+
 @GeneratedValue(strategy=GenerationType.IDENTITY)
 private Long id;
 @Column(name="STUDENT_NAME", length=50, nullable=false, unique=false)
 private String name;
+@Column(nullable = false)
+private String lastname;
+@Column(unique = true)
+private String email;
+
 public Long getId() {
 	return id;
 }
@@ -26,6 +32,18 @@ public String getName() {
 }
 public void setName(String name) {
 	this.name = name;
+}
+public String getLastname() {
+	return lastname;
+}
+public void setLastname(String lastname) {
+	this.lastname = lastname;
+}
+public String getEmail() {
+	return email;
+}
+public void setEmail(String email) {
+	this.email = email;
 }
 
 
